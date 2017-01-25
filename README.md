@@ -5,7 +5,7 @@ My [dwmstatus](http://dwm.suckless.org/dwmstatus/) config files...
 
 ### Installation ###
 
-Before following those steps, you need to have [dwm](https://github.com/Afnarel/dwm) installed.
+Before following those steps, you need to have [dwm](http://git.suckless.org/dwm) installed.
 
   * Clone the repo: `git clone git@github.com:Afnarel/dwmstatus.git`.
   * cd into it (`cd dwmstatus`) and run `make`. A dwmstatus executable is created.
