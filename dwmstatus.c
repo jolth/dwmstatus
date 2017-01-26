@@ -309,6 +309,7 @@ int main(void) {
 		rx_rate = (atoi(rx_now) - atoi(rx_old)) / 1024;
 		tx_rate = (atoi(tx_now) - atoi(tx_old)) / 1024;
 		getcore(cores);
+        //status = smprintf("\x05[ \x01WLAN0: \x06%dK\x05 / \x06%dK\x05 ][ \x01VOL: \x06%s \x05][\x01 CPU: \x04%s\x05 / \x04%s\x05 / \x04%s\x05 \x04%s \x05][\x01 RAM: \x04%s\x05 ][ \x03%s\x05 ][ \x03%s\x05 ]",
 		status = smprintf("[ WLAN0: %dK / %dK ][ VOL: %s ][ CPU: %s / %s / %s / %s ][ RAM: %s ][ %s ][ %s ]",
 				  rx_rate, tx_rate, vol, cores[0], cores[1], cores[2], cores[3], mem, date, tme);
 		strcpy(rx_old, rx_now);
