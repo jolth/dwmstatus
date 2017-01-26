@@ -299,7 +299,7 @@ int main(void) {
 		//avgs = loadavg();
 		//NO USAGE: bat = getbattery(BATTERY);
 		date = mktimes("%a, %d %b", tzpst);
-		tme = mktimes("%H:%M", tzpst);
+		tme = mktimes("%H:%M:%S", tzpst);
 		//NO USAGE: charge = chargeStatus(ADAPTER);
 		vol = runcmd(VOLCMD);
 		mem = runcmd(MEMCMD);
