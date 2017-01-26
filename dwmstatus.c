@@ -258,9 +258,25 @@ void getcore(char cores[4][5]){
 //#define RXCMD "cat /sys/class/net/wlan0/statistics/rx_bytes"
 //#define TXCMD "cat /sys/class/net/wlan0/statistics/tx_bytes"
 
-int
-main(void)
-{
+#define RED   "\x1B[31m"
+#define GRN   "\x1B[32m"
+#define YEL   "\x1B[33m"
+#define BLU   "\x1B[34m"
+#define MAG   "\x1B[35m"
+#define CYN   "\x1B[36m"
+#define WHT   "\x1B[37m"
+#define RESET "\x1B[0m"
+
+#define KNRM  "\x1B[0m"
+#define KRED  "\x1B[31m"
+#define KGRN  "\x1B[32m"
+#define KYEL  "\x1B[33m"
+#define KBLU  "\x1B[34m"
+#define KMAG  "\x1B[35m"
+#define KCYN  "\x1B[36m"
+#define KWHT  "\x1B[37m"
+
+int main(void) {
 	char *status;
 	char *avgs;
 	char *bat;
@@ -293,7 +309,7 @@ main(void)
 		rx_rate = (atoi(rx_now) - atoi(rx_old)) / 1024;
 		tx_rate = (atoi(tx_now) - atoi(tx_old)) / 1024;
 		getcore(cores);
-		status = smprintf("\x05[ \x01WLAN0: \x06%dK\x05 / \x06%dK\x05 ][ \x01VOL: \x06%s \x05][\x01 CPU: \x04%s\x05 / \x04%s\x05 / \x04%s\x05 / \x04%s \x05][\x01 RAM: \x04%s\x05 ][ \x03%s\x05 ][ \x03%s\x05 ]",
+		status = smprintf("[ WLAN0: %dK / %dK ][ VOL: %s ][ CPU: %s / %s / %s / %s ][ RAM: %s ][ %s ][ %s ]",
 				  rx_rate, tx_rate, vol, cores[0], cores[1], cores[2], cores[3], mem, date, tme);
 		strcpy(rx_old, rx_now);
 		strcpy(tx_old, tx_now);
@@ -312,4 +328,3 @@ main(void)
 
 	return 0;
 }
-
